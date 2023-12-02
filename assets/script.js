@@ -43,6 +43,7 @@ question=confirm("Your password is generated");
 
 if(question){
     while(passwordText1.length<length){
+      //if all the criterias are  confirmed
       if(q2==true && q3==true && q4==true && q5==true){
         all=lowercase+uppercase+symbol+number;
         passwordText1+=all[Math.floor(Math.random() * all.length)];
