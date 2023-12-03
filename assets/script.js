@@ -7,7 +7,10 @@ var uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var all="";
 
 
+
 function generatePassword(){
+
+
 var length =parseInt(prompt("Type a lenght you would like your password to be.(It can be between 8 - 128)"));
 
       if(!length){
@@ -59,7 +62,7 @@ else{
 return passwordText1;
 }
 
-if(length>8 && length<128){   
+if(length>8 && length<128 && passwordText1.length==0){   
 
 ifLowerCasewasChosen();
 ifUpperCasewasChosen();
@@ -73,6 +76,10 @@ while(passwordText1.length<length){
     return passwordText1;
    
 }
+else if(length>8 && length<128 && !passwordText1.length==0){
+  
+  alert("Password field is not cleared out. Please reload the application!")
+}
 else{
     alert("Password must inlude min 8 to max 128 characters");
 }
@@ -82,9 +89,9 @@ else{
  
 
 generateBtn.onclick=function writePassword () {
+
     var password =generatePassword();
-     var passwordText = document.querySelector("#password");
-     
+    var passwordText = document.querySelector("#password");
    passwordText.value=password;
 
    
@@ -94,6 +101,7 @@ generateBtn.onclick=function writePassword () {
      }
      
      // Add event listener to generate button
-     
+    
      generateBtn.addEventListener("click",writePassword());
+    
      
