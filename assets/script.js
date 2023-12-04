@@ -1,3 +1,4 @@
+//variables assigned with values to be used when genrating the passsword.
 var generateBtn = document.querySelector("#generate");
  var passwordText1="";
  var symbol="!@#$%^&*()";
@@ -18,8 +19,8 @@ var length =parseInt(prompt("Type a lenght you would like your password to be.(I
     }
      
   
-
-  function ifLowerCasewasChosen(){
+//if lowercase is selected or not to be included in password.
+  function ifLowerCasewasChosenorNot(){
     if(confirm("Will this contain Lowercase letters?")){
     passwordText1+=lowercase[ Math.floor(Math.random() * lowercase.length)]
   }
@@ -29,7 +30,9 @@ else {
 
 return passwordText1;}
 
-  function ifUpperCasewasChosen(){
+//if upper is selected or not to be included in password.
+
+  function ifUpperCasewasChosenorNot(){
     if(confirm("Will this contain UpperCase letters?")){
     passwordText1+=uppercase[ Math.floor(Math.random() * uppercase.length)]
     }
@@ -41,8 +44,9 @@ return passwordText1;}
   }
   
 
+//if number is selected or not to be included in password.
 
-  function ifNumberCasewasChosen(){
+  function ifNumberCasewasChosenorNot(){
     if(confirm("Will this contain numbers?")){
     passwordText1+=number[ Math.floor(Math.random() * number.length)]
   }
@@ -51,6 +55,9 @@ else{
 }
 return passwordText1;
   }
+
+  
+  //if any charachter/symbol is selected or not to be included in password.
 
   function ifSymbolCasewasChosenOrNot(){
     if(confirm("Will this contain special characters?")){
@@ -61,7 +68,7 @@ else{
 }
 return passwordText1;
 }
-
+//if the password lenght within the given requirement generate the passwordby calling functions.
 if(length>8 && length<128 && passwordText1.length==0){   
 
 ifLowerCasewasChosen();
@@ -76,6 +83,7 @@ while(passwordText1.length<length){
     return passwordText1;
    
 }
+//if lenght is not met.
 else if(length>8 && length<128 && !passwordText1.length==0){
   
   alert("Password field is not cleared out. Please reload the application!")
