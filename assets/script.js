@@ -71,9 +71,9 @@ return passwordText1;
 //if the password lenght within the given requirement generate the passwordby calling functions.
 if(length>8 && length<128 && passwordText1.length==0){   
 
-ifLowerCasewasChosen();
-ifUpperCasewasChosen();
-ifNumberCasewasChosen();
+  ifLowerCasewasChosenorNot();
+  ifUpperCasewasChosenorNot();
+  ifNumberCasewasChosenorNot();
 ifSymbolCasewasChosenOrNot();
 if(passwordText1.length==0)
 alert("You must choose at leat one criteria.");
